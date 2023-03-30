@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter); // la usamos para home y creditos 
-app.use('/users', usersRouter);
+app.use('/users', usersRouter); 
 app.use('/productos',productosRouter); // ruta troncal. la usamos para productos. 
 
 // catch 404 and forward to error handler
