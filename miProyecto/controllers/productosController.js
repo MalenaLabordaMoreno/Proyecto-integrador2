@@ -1,4 +1,4 @@
-let productoController = {
+let productosController = {
     // listado de productos 
     index: function (req,res) {
         return res.send ('Index de productos') 
