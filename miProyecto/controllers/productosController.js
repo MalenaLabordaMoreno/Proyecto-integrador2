@@ -3,8 +3,8 @@ let productosController = {
         return res.send('Index de productos')
     },
     agregar: function (req,res) {
-        return res.render('agregar_productos', {'title': 'Agregar producto'})
-    },
+        return res.render('agregar_productos', {'title': 'Agregar producto'}) //la propiedad va a ser el nombre de la variable que voy a usar en la vista
+    }, //info que voy a usar en la vista, {propiedad:valor}
     listaProductos: function (req,res) {
         let lista_productos = [
             {
