@@ -1,5 +1,5 @@
-const productosController = require ('../controllers/productosController');
-let express = requiere('express');
+const productosController = require ('../../controllers/productosController');
+let express = require('express');
 let router = express.Router();
 
 // Rutas de productos 
