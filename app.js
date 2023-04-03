@@ -7,7 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let productosRouter = require ('./routes/productos');
-let loginRouter = require('./routes/login')
+let loginRouter = require('./routes/login');
+let searchRouter = require('./routes/search-results');
+let registerRouter = require('./routes/register');
 
 var app = express();
 
@@ -24,7 +26,9 @@ app.use(express.static(path.join(__dirname, 'public'))); //recursos estaticos, v
 app.use('/', indexRouter); // la usamos para home y creditos 
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter); // ruta troncal. la usamos para productos. 
-app.use('/login', loginRouter)
+app.use('/login', loginRouter);
+app.use('/search',searchRouter);
+app.use('/register',registerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
