@@ -10,6 +10,7 @@ let productosRouter = require ('./routes/productos');
 let loginRouter = require('./routes/login');
 let searchRouter = require('./routes/search-results');
 let registerRouter = require('./routes/register');
+let profileRouter = require('./routes/profile');
 
 var app = express();
 
@@ -27,8 +28,9 @@ app.use('/', indexRouter); // la usamos para home y creditos
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter); // ruta troncal. la usamos para productos. 
 app.use('/login', loginRouter);
-app.use('/search',searchRouter);
-app.use('/register',registerRouter);
+app.use('/search', searchRouter);
+app.use('/register', registerRouter);
+app.use('/profile', profileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

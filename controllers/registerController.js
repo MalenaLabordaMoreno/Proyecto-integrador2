@@ -1,6 +1,6 @@
 let registerController = {
     index: function (req,res) {
-        return res.send('Registra tu cuenta')
+        return res.render('register')
     },
 
 };
