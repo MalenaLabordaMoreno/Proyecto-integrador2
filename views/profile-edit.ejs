@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<%- include('./partials/head')%> 
+
+<body>
+    <%- include('./partials/headerLogueado')%> 
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Editar mi perfil</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<form action=" " method="GET"> <!-- nos tiene q rediregir a??-->
+				<label for="email">Email:</label>
+				<input type="email" name="email"><br><br>
+			  
+				<label for="usuario">Usuario:</label>
+				<input type="text" name="usuario"><br><br>
+			  
+				<label for="contraseña">Contraseña:</label>
+				<input type="password" name="contraseña"><br><br>
+			  
+				<label for="fecha_nacimiento">Fecha de nacimiento:</label>
+				<input type="date" name="fecha_nacimiento"><br><br>
+			  
+				<label for="numero_documento">Número de documento:</label>
+				<input type="number" name="numero_documento"><br><br>
+			  
+				<label for="foto_perfil">Foto de perfil:</label>
+				<input type="text" name="foto_perfil"><br><br>
+			  
+				<button type="submit" value="Enviar"> </button>
+			  </form>
+
+
+            <%- include('./partials/foot')%> 
+</body>
+
+</html>
