@@ -16,21 +16,12 @@ let productosController = {
     agregar: function (req,res) {
         return res.render('agregarProductos') //la propiedad va a ser el nombre de la variable que voy a usar en la vista
     },
-     //info que voy a usar en la vistac, {propiedad:valor}
     listaProductos: function (req,res) {
-        
         return res.render('')
-    }
-};
-
-// search result controller 
-let searchController = {
-    index: function (req,res) {
+    },
+    search: function (req,res) {
         return res.render('search-results')
     },
-
 };
 
-
-module.exports = searchController;
 module.exports = productosController;

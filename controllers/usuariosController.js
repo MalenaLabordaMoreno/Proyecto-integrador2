@@ -1,29 +1,17 @@
-// login controller 
-let loginController = {
-    index: function(req,res) {
-        return res.render('login',{'title':'Login user'})
-    },
-
-};
-
-// register controller 
-let registerController = {
-    index: function (req,res) {
+let usuariosController = {
+    register: function (req,res) {
         return res.render('register')
-    },
+    }, 
 
-};
-
-// profile controller 
-let profileController = {
-    index: function (req,res) {
+    profile: function (req,res) {
         return res.render('profile')
     },
     edit: function(req,res) {
         return res.render('profile-edit')
+    },
+    login: function(req,res) {
+        return res.render('login')
     }
 };
 
-module.exports = profileController;
-module.exports = registerController;
-module.exports = loginController;
+module.exports = usuariosController;
