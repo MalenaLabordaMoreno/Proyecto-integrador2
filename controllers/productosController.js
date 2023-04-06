@@ -23,5 +23,14 @@ let productosController = {
     }
 };
 
+// search result controller 
+let searchController = {
+    index: function (req,res) {
+        return res.render('search-results')
+    },
 
+};
+
+
+module.exports = searchController;
 module.exports = productosController;
