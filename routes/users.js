@@ -6,6 +6,7 @@ const usuariosController = require('../controllers/usuariosController');
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
 router.get('/editProfile', usuariosController.edit);
 router.get('/login',usuariosController.login)
 router.get('/register', usuariosController.register)

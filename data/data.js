@@ -1,14 +1,14 @@
 let lista_productos = [
     {
         id: 1,
-        imagen: "/images/products/img-cafetera-moulinex.jpg",
-        nombre: "Heladera Gafa",
-        decripcion: "Heladera Gafa 2 puertas con freezer",
+        imagen: "/images/products/cafetera-verde.png",
+        nombre: "Cafetera Verde",
+        decripcion: "Cafetera Verde",
         fecha_de_carga: "2021-05-01",
         usuarios: {
             id: 1,
             nombre: 'Juan Perez',
-            email: '',
+            email: 'juanperez@gmail.com',
             contrasenia: '',
             fecha_nacimiento: '',
             numero_documento: '',
@@ -17,11 +17,11 @@ let lista_productos = [
         comentarios: [
             {
                 id: 1,
-                comentario: "Muy buena heladera",
+                comentario: "¡Muy buena cafetera! Super comoda",
                 usuario: {
                     id: 2,
                     nombre: 'Laura Perez',
-                    email: '',
+                    email: 'lauraperez1@gmail.com',
                     contrasenia: '',
                     fecha_nacimiento: '',
                     numero_documento: '',
@@ -32,14 +32,14 @@ let lista_productos = [
     },
     {
         id: 2,
-        imagen: "/images/products/img-cafetera-moulinex.jpg",
-        nombre: "Heladera Gafa",
-        decripcion: "Heladera Gafa 2 puertas con freezer",
+        imagen: "/images/products/citiz-chrome.png",
+        nombre: "Cafetera Citiz Chrome",
+        decripcion: "Citiz Chrome",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 1,
-            nombre: 'Juan Perez',
-            email: '',
+            id: 2,
+            nombre: 'Felipe Sanchez',
+            email: 'felipesanchez@hotmail.com',
             contrasenia: '',
             fecha_nacimiento: '',
             numero_documento: '',
@@ -47,11 +47,11 @@ let lista_productos = [
         },
         comentarios: [
             {
-                id: 1,
-                comentario: "Muy buena heladera",
+                id: 2,
+                comentario: "Me encanto esta cafetera, la uso todos los dias",
                 usuario: {
                     id: 2,
-                    nombre: 'Laura Perez',
+                    nombre: 'Sofia Lopez',
                     email: '',
                     contrasenia: '',
                     fecha_nacimiento: '',
@@ -63,13 +63,13 @@ let lista_productos = [
     },
     {
         id: 3,
-        imagen: "/images/products/img-cafetera-moulinex.jpg",
-        nombre: "Heladera Gafa",
-        decripcion: "Heladera Gafa 2 puertas con freezer",
+        imagen: "/images/products/creatista-metal.png",
+        nombre: "Cafetera Creatista Metal",
+        decripcion: "Cafetera Creatista Metal",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 1,
-            nombre: 'Juan Perez',
+            id: 3,
+            nombre: 'Luana Vellagio',
             email: '',
             contrasenia: '',
             fecha_nacimiento: '',
@@ -78,11 +78,11 @@ let lista_productos = [
         },
         comentarios: [
             {
-                id: 1,
-                comentario: "Muy buena heladera",
+                id: 3,
+                comentario: "Se me habia roto pero lo solucionarion a la perfeccion. Gracias por la atencion personalizada!",
                 usuario: {
-                    id: 2,
-                    nombre: 'Laura Perez',
+                    id: 3,
+                    nombre: 'Lucas Diaz',
                     email: '',
                     contrasenia: '',
                     fecha_nacimiento: '',
@@ -94,13 +94,13 @@ let lista_productos = [
     },
     {
         id: 4,
-        imagen: "/images/products/img-cafetera-moulinex.jpg",
-        nombre: "Heladera Gafa",
-        decripcion: "Heladera Gafa 2 puertas con freezer",
+        imagen: "/images/products/lattissima-white.png",
+        nombre: "Cafetera Lattissima White",
+        decripcion: "Cafetera Lattissima White",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 1,
-            nombre: 'Juan Perez',
+            id: 4,
+            nombre: 'Liliana Rojas',
             email: '',
             contrasenia: '',
             fecha_nacimiento: '',
@@ -109,11 +109,11 @@ let lista_productos = [
         },
         comentarios: [
             {
-                id: 1,
-                comentario: "Muy buena heladera",
+                id: 4,
+                comentario: "Me resulto muy comoda la cafetera",
                 usuario: {
                     id: 2,
-                    nombre: 'Laura Perez',
+                    nombre: 'Belen Francia',
                     email: '',
                     contrasenia: '',
                     fecha_nacimiento: '',
