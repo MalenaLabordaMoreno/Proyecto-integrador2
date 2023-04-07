@@ -16,6 +16,7 @@ let productosController = {
     agregar: function (req,res) {
         return res.render('agregarProductos') //la propiedad va a ser el nombre de la variable que voy a usar en la vista
     },
+   //QUE ES ESTO?
     listaProductos: function (req,res) {
         return res.render('')
     },

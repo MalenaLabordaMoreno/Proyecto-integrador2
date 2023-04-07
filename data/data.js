@@ -123,6 +123,130 @@ let lista_productos = [
             }
         ]
     },
+    {
+        id: 5,
+        imagen: "/images/products/lattissima-black.png",
+        nombre: "Cafetera Lattissima Black",
+        decripcion: "Cafetera Lattissima Black",
+        fecha_de_carga: "2021-05-01",
+        usuarios: {
+            id: 4,
+            nombre: 'Liliana Rojas',
+            email: '',
+            contrasenia: '',
+            fecha_nacimiento: '',
+            numero_documento: '',
+            foto_perfil: ''
+        },
+        comentarios: [
+            {
+                id: 4,
+                comentario: "Me resulto muy comoda la cafetera",
+                usuario: {
+                    id: 2,
+                    nombre: 'Belen Francia',
+                    email: '',
+                    contrasenia: '',
+                    fecha_nacimiento: '',
+                    numero_documento: '',
+                    foto_perfil: ''
+                }
+            }
+        ]
+    },
+    {
+        id: 6,
+        imagen: "/images/products/mini-black.png",
+        nombre: "Cafetera Mini Black",
+        decripcion: "Cafetera Mini Black",
+        fecha_de_carga: "2021-05-01",
+        usuarios: {
+            id: 4,
+            nombre: 'Liliana Rojas',
+            email: '',
+            contrasenia: '',
+            fecha_nacimiento: '',
+            numero_documento: '',
+            foto_perfil: ''
+        },
+        comentarios: [
+            {
+                id: 4,
+                comentario: "Me resulto muy comoda la cafetera",
+                usuario: {
+                    id: 2,
+                    nombre: 'Belen Francia',
+                    email: '',
+                    contrasenia: '',
+                    fecha_nacimiento: '',
+                    numero_documento: '',
+                    foto_perfil: ''
+                }
+            }
+        ]
+    },
+    {
+        id: 7,
+        imagen: "/images/products/mini-red.png",
+        nombre: "Cafetera Mini Red",
+        decripcion: "Cafetera Mini Red",
+        fecha_de_carga: "2021-05-01",
+        usuarios: {
+            id: 4,
+            nombre: 'Liliana Rojas',
+            email: '',
+            contrasenia: '',
+            fecha_nacimiento: '',
+            numero_documento: '',
+            foto_perfil: ''
+        },
+        comentarios: [
+            {
+                id: 4,
+                comentario: "Me resulto muy comoda la cafetera",
+                usuario: {
+                    id: 2,
+                    nombre: 'Belen Francia',
+                    email: '',
+                    contrasenia: '',
+                    fecha_nacimiento: '',
+                    numero_documento: '',
+                    foto_perfil: ''
+                }
+            }
+        ]
+    },
+    {
+        id: 8,
+        imagen: "/images/products/mini-white.png",
+        nombre: "Cafetera Mini White",
+        decripcion: "Cafetera Mini White",
+        fecha_de_carga: "2021-05-01",
+        usuarios: {
+            id: 4,
+            nombre: 'Liliana Rojas',
+            email: '',
+            contrasenia: '',
+            fecha_nacimiento: '',
+            numero_documento: '',
+            foto_perfil: ''
+        },
+        comentarios: [
+            {
+                id: 4,
+                comentario: "Me resulto muy comoda la cafetera",
+                usuario: {
+                    id: 2,
+                    nombre: 'Belen Francia',
+                    email: '',
+                    contrasenia: '',
+                    fecha_nacimiento: '',
+                    numero_documento: '',
+                    foto_perfil: ''
+                }
+            }
+        ]
+    },
 ]
 
 // }
