@@ -2,7 +2,13 @@
 <html>
   <%- include('./partials/head')%>
   <body>
-    <%- include('./partials/header')%>
+    <% if (loggedIn) {%> <!--hacer lo mismo con register, -->
+		<%-include('.partials/headerLogueado')
+<%	}%>
+   <% else { %>
+		<%- include('./partials/header')%>
+<%   }%>
+
     <%- include('./partials/banner')%>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
