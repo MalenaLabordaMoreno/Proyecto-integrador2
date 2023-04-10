@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Include Head -->
+
     <%- include('./partials/head')%>   
 <body>
 	<%- include('./partials/header')%>
-	<!-- product detail -->
+
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.nombre %></h2> 
 			<p class="product-detail-description">
-				<a href="product-add">Editar</a>
+				<a href="/product-add">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -42,7 +42,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- /product detail -->
 
     <%- include('./partials/foot')%>   
 

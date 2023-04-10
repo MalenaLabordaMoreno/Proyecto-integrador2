@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Include Head -->
 
     <%- include('./partials/head')%> 
 <body>
     <%- include('./partials/header')%> 
 
-	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Ingresar</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+
 			<form action="/users/profile" method="GET"> 
 				<label for="usuario">Usuario:</label>
 				<input type="email" name="usuario"><br><br>
