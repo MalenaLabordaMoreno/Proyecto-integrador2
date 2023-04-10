@@ -1,16 +1,16 @@
 /*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
-
+@import url('https://fonts.google.com/specimen/Bebas+Neue?query=bebas+neue');
+@import url('https://fonts.google.com/specimen/Architects+Daughter?query=archi');
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --red: #c25555;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
-  --gray: #666666;
+  --red: #c25555;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'Bebas Neue'
 }
 
 
@@ -29,7 +29,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: var(  --red);
 }
 
 ul,
@@ -154,11 +154,12 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/products/banner-cafe.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: 100px;
+  overflow: hidden;
 }
 
 
