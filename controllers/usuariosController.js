@@ -1,9 +1,10 @@
+const lista_productos = require('../data/data');
 let usuariosController = {
     register: function (req,res) {
         return res.render('register')
     }, 
     profile: function (req,res) {
-        return res.render('profile')
+        return res.render('profile', {lista_productos: lista_productos })
     },
     edit: function(req,res) {
         return res.render('profile-edit')

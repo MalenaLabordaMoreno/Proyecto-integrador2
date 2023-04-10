@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Include Head -->
-<!-- mostrar el dato que te llega por variable, con la etiqueta <= nombre de la propiedad que se encuentra en controllers%> -->
 <%-include('./partials/head')%>
 
 <body>
 	<%- include('./partials/headerLogueado')%>
-	<%- include('./partials/novedades')%>
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+    	<div class="row">
+        	<div class="col-12">
+            	<h2 class="products-title">Novedades</h2>
+        	</div>
+        	<!-- Show the "ultimos" products -->
+        	<% for (let i = 0; i < 4; i++) { %>
+            	<div class="col-12 col-sm-6 col-lg-3">
+                	<section class="product-box">
+                    	<a href="/productos/detalle/<%= lista_productos[i].id %>">
+                        	<figure class="product-box_image">
+                            	<img src="<%= lista_productos[i].imagen %>" alt="<%= lista_productos[i].nombre %>">
+                        	</figure>
+                        	<article class="product-box_data">
+                            	<h2><%= lista_productos[i].nombre %></h2>
+                            	<p><%= lista_productos[i].descripcion %></p>
+                            	<p>Comentarios: <%= lista_productos[i].comentarios.length %></p>
+                        	</article>
+                    	</a>
+                	</section>
+            	</div>
+        	<% } %>
+    	</div>
+	</div>
+	<!-- /Novedades -->
 
 			<%- include('./partials/foot')%>
 	
