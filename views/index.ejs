@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <%- include('./partials/head')%>
+  <%- include('./partials/head') %>
   <body>
-    <% if (loggedIn) {%> <!--hacer lo mismo con register, -->
-		<%-include('.partials/headerLogueado')
-<%	}%>
+    <% if (loggedIn) { %> 
+		<%- include('./partials/headerLogueado') %>
+	<%	} %>
    <% else { %>
-		<%- include('./partials/header')%>
-<%   }%>
+		<%- include('./partials/header') %>
+	<%   } %>
 
-    <%- include('./partials/banner')%>
+    <%- include('./partials/banner') %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
     	<div class="row">
