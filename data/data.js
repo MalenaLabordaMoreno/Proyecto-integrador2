@@ -9,79 +9,79 @@ let lista_productos = [
             id: 1,
             nombre: 'Juan Perez',
             email: 'juanperez@gmail.com',
-            contrasenia: '',
-            fecha_nacimiento: '',
-            numero_documento: '',
-            foto_perfil: ''
+            contrasenia: 'futbol123',
+            fecha_nacimiento: '18/12/04',
+            numero_documento: '45023191',
+            foto_perfil: '/images/foto-juan.jpg'
         },
         comentarios: [
             {
-                id: 1,
+                id: 2,
                 comentario: "¡Muy buena cafetera! Super comoda",
                 usuario: {
                     id: 2,
                     nombre: 'Laura Perez',
                     email: 'lauraperez1@gmail.com',
-                    contrasenia: '',
-                    fecha_nacimiento: '',
-                    numero_documento: '',
-                    foto_perfil: ''
-                }
-            }
-        ]
-    },
-    {
-        id: 2,
-        imagen: "/images/products/citiz-chrome.png",
-        nombre: "Cafetera Citiz Chrome",
-        decripcion: "Citiz Chrome",
-        fecha_de_carga: "2021-05-01",
-        usuarios: {
-            id: 2,
-            nombre: 'Felipe Sanchez',
-            email: 'felipesanchez@hotmail.com',
-            contrasenia: '',
-            fecha_nacimiento: '',
-            numero_documento: '',
-            foto_perfil: ''
-        },
-        comentarios: [
-            {
-                id: 2,
-                comentario: "Me encanto esta cafetera, la uso todos los dias",
-                usuario: {
-                    id: 2,
-                    nombre: 'Sofia Lopez',
-                    email: '',
-                    contrasenia: '',
-                    fecha_nacimiento: '',
-                    numero_documento: '',
-                    foto_perfil: ''
+                    contrasenia: 'laurita345',
+                    fecha_nacimiento: '15/04/03',
+                    numero_documento: '45023494',
+                    foto_perfil: '/images/foto-laura.jpg'
                 }
             }
         ]
     },
     {
         id: 3,
+        imagen: "/images/products/citiz-chrome.png",
+        nombre: "Cafetera Citiz Chrome",
+        decripcion: "Citiz Chrome",
+        fecha_de_carga: "2021-05-01",
+        usuarios: {
+            id: 3,
+            nombre: 'Felipe Sanchez',
+            email: 'felipesanchez@hotmail.com',
+            contrasenia: 'feli3456',
+            fecha_nacimiento: '12/05/02',
+            numero_documento: '42034141',
+            foto_perfil: '/images/foto-felipe.png'
+        },
+        comentarios: [
+            {
+                id: 4,
+                comentario: "Me encanto esta cafetera, la uso todos los dias",
+                usuario: {
+                    id: 4,
+                    nombre: 'Sofia Lopez',
+                    email: 'sofilopez03@gmail.com',
+                    contrasenia: 'sofita2345',
+                    fecha_nacimiento: '23/04/03',
+                    numero_documento: '43054161',
+                    foto_perfil: '/images/foto-sofia.png'
+                }
+            }
+        ]
+    },
+    {
+        id: 5,
         imagen: "/images/products/creatista-metal.png",
         nombre: "Cafetera Creatista Metal",
         decripcion: "Cafetera Creatista Metal",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 3,
+            id: 5,
             nombre: 'Luana Vellagio',
-            email: '',
-            contrasenia: '',
-            fecha_nacimiento: '',
-            numero_documento: '',
-            foto_perfil: ''
+            email: 'luanavellagio@hotmail.com',
+            contrasenia: '2345',
+            fecha_nacimiento: '21/05/04',
+            numero_documento: '46091181',
+            foto_perfil: '/images/foto-luana.png'
         },
         comentarios: [
             {
-                id: 3,
+                id: 6,
                 comentario: "Se me habia roto pero lo solucionarion a la perfeccion. Gracias por la atencion personalizada!",
                 usuario: {
-                    id: 3,
+                    id: 6,
                     nombre: 'Lucas Diaz',
                     email: '',
                     contrasenia: '',
@@ -93,13 +93,13 @@ let lista_productos = [
         ]
     },
     {
-        id: 4,
+        id: 7,
         imagen: "/images/products/lattissima-white.png",
         nombre: "Cafetera Lattissima White",
         decripcion: "Cafetera Lattissima White",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 4,
+            id: 7,
             nombre: 'Liliana Rojas',
             email: '',
             contrasenia: '',
@@ -109,10 +109,10 @@ let lista_productos = [
         },
         comentarios: [
             {
-                id: 4,
+                id: 8,
                 comentario: "Me resulto muy comoda la cafetera",
                 usuario: {
-                    id: 2,
+                    id: 8,
                     nombre: 'Belen Francia',
                     email: '',
                     contrasenia: '',
@@ -124,13 +124,13 @@ let lista_productos = [
         ]
     },
     {
-        id: 5,
+        id: 9,
         imagen: "/images/products/lattissima-black.png",
         nombre: "Cafetera Lattissima Black",
         decripcion: "Cafetera Lattissima Black",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 4,
+            id: 9,
             nombre: 'Liliana Rojas',
             email: '',
             contrasenia: '',
@@ -140,10 +140,10 @@ let lista_productos = [
         },
         comentarios: [
             {
-                id: 4,
+                id: 10,
                 comentario: "Me resulto muy comoda la cafetera",
                 usuario: {
-                    id: 2,
+                    id: 11,
                     nombre: 'Belen Francia',
                     email: '',
                     contrasenia: '',
@@ -155,14 +155,14 @@ let lista_productos = [
         ]
     },
     {
-        id: 6,
+        id: 11,
         imagen: "/images/products/mini-black.png",
         nombre: "Cafetera Mini Black",
         decripcion: "Cafetera Mini Black",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 4,
-            nombre: 'Liliana Rojas',
+            id: 11,
+            nombre: 'Azul Landi',
             email: '',
             contrasenia: '',
             fecha_nacimiento: '',
@@ -171,11 +171,11 @@ let lista_productos = [
         },
         comentarios: [
             {
-                id: 4,
+                id: 12,
                 comentario: "Me resulto muy comoda la cafetera",
                 usuario: {
-                    id: 2,
-                    nombre: 'Belen Francia',
+                    id: 12,
+                    nombre: 'Ines Rioja',
                     email: '',
                     contrasenia: '',
                     fecha_nacimiento: '',
@@ -186,14 +186,14 @@ let lista_productos = [
         ]
     },
     {
-        id: 7,
+        id: 13,
         imagen: "/images/products/mini-red.png",
         nombre: "Cafetera Mini Red",
         decripcion: "Cafetera Mini Red",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 4,
-            nombre: 'Liliana Rojas',
+            id: 13,
+            nombre: 'Camila Monoy',
             email: '',
             contrasenia: '',
             fecha_nacimiento: '',
@@ -202,11 +202,11 @@ let lista_productos = [
         },
         comentarios: [
             {
-                id: 4,
+                id: 14,
                 comentario: "Me resulto muy comoda la cafetera",
                 usuario: {
-                    id: 2,
-                    nombre: 'Belen Francia',
+                    id: 14,
+                    nombre: 'Lisa Suarez',
                     email: '',
                     contrasenia: '',
                     fecha_nacimiento: '',
@@ -217,14 +217,14 @@ let lista_productos = [
         ]
     },
     {
-        id: 8,
+        id: 15,
         imagen: "/images/products/mini-white.png",
         nombre: "Cafetera Mini White",
         decripcion: "Cafetera Mini White",
         fecha_de_carga: "2021-05-01",
         usuarios: {
-            id: 4,
-            nombre: 'Liliana Rojas',
+            id: 15,
+            nombre: 'Santiago Bilis',
             email: '',
             contrasenia: '',
             fecha_nacimiento: '',
@@ -233,11 +233,11 @@ let lista_productos = [
         },
         comentarios: [
             {
-                id: 4,
+                id: 16,
                 comentario: "Me resulto muy comoda la cafetera",
                 usuario: {
-                    id: 2,
-                    nombre: 'Belen Francia',
+                    id: 16,
+                    nombre: 'Franco Ros',
                     email: '',
                     contrasenia: '',
                     fecha_nacimiento: '',
