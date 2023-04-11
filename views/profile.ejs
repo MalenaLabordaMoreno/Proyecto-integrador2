@@ -11,13 +11,14 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> Luisa Gomez
-						<a href="/profile/<%= producto.usuarios[i] %>"> <%= producto.usuarios[i] %></a>
-						<a href="/profile-edit">
-							<i class="fas fa-cog"></i>
+					<h1 class="main-title"> 
+						<%= lista_productos.comentarios%>
+						<a href="/profile/<%= lista_productos.comentarios%>"> <%= lista_productos.usuarios %></a>
+						<a href="/users/editProfile">
+							<i class="fas fa-cog"></i> LUISA GOMEZ
 						</a>
 					</h1>
-					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+					<a class="btn mt-3 ml-4" href="/users/editProfile">SEGUIR</a>
 				</div>
 				<div>
 					<ul class="">
