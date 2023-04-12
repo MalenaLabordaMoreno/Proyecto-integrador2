@@ -14,12 +14,9 @@ let productosController = {
         return res.render('product', {producto: producto_buscado})
     },
     agregar: function (req,res) {
-        return res.render('agregarProductos') //la propiedad va a ser el nombre de la variable que voy a usar en la vista
+        return res.render('agregarProductos', {lista_productos: lista_productos}) //la propiedad va a ser el nombre de la variable que voy a usar en la vista
     },
 
-    listaProductos: function (req,res) {
-        return res.render('')
-    },
     search: function (req,res) { 
         return res.render('search-results', {lista_productos: lista_productos})
     },
