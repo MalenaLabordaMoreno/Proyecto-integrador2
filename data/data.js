@@ -87,7 +87,7 @@ let lista_productos = [
                     contrasenia: '34563456',
                     fecha_nacimiento: '2003-04-12',
                     numero_documento: '42098769',
-                    foto_perfil: ''
+                    foto_perfil: '/images/foto-juan.jpg'
                 }
             }
         ]
@@ -105,7 +105,7 @@ let lista_productos = [
             contrasenia: 'liliana1234',
             fecha_nacimiento: '2001-05-15',
             numero_documento: '47345876',
-            foto_perfil: ''
+            foto_perfil: '/images/foto-luana.png'
         },
         comentarios: [
             {
@@ -118,7 +118,7 @@ let lista_productos = [
                     contrasenia: '234567',
                     fecha_nacimiento: '2002-11-03',
                     numero_documento: '45067678',
-                    foto_perfil: ''
+                    foto_perfil: '/images/foto-luana.png'
                 }
             }
         ]
@@ -136,7 +136,7 @@ let lista_productos = [
             contrasenia: '234567',
             fecha_nacimiento: '2001-04-04',
             numero_documento: '45087611',
-            foto_perfil: ''
+            foto_perfil: '/images/foto-juan.jpg'
         },
         comentarios: [
             {
@@ -149,7 +149,7 @@ let lista_productos = [
                     contrasenia: '34956',
                     fecha_nacimiento: '2003-01-04',
                     numero_documento: '43212447',
-                    foto_perfil: ''
+                    foto_perfil: '/images/foto-laura.jpg'
                 }
             }
         ]
@@ -167,7 +167,7 @@ let lista_productos = [
             contrasenia: '234567',
             fecha_nacimiento: '2003-04-21',
             numero_documento: '45027191',
-            foto_perfil: ''
+            foto_perfil: '/images/foto-laura.jpg'
         },
         comentarios: [
             {
@@ -180,7 +180,7 @@ let lista_productos = [
                     contrasenia: '3456456luz',
                     fecha_nacimiento: '2001-05-04',
                     numero_documento: '41027191',
-                    foto_perfil: ''
+                    foto_perfil: '/images/foto-laura.jpg'
                 }
             }
         ]
@@ -198,7 +198,7 @@ let lista_productos = [
             contrasenia: '456789',
             fecha_nacimiento: '2001-05-02',
             numero_documento: '45676545',
-            foto_perfil: ''
+            foto_perfil: '/images/foto-laura.jpg'
         },
         comentarios: [
             {
@@ -211,7 +211,7 @@ let lista_productos = [
                     contrasenia: '234567',
                     fecha_nacimiento: '2003-05-03',
                     numero_documento: '45676232',
-                    foto_perfil: ''
+                    foto_perfil: '/images/foto-sofia.png'
                 }
             }
         ]
@@ -229,12 +229,12 @@ let lista_productos = [
             contrasenia: '234567',
             fecha_nacimiento: '2001-04-05',
             numero_documento: '42090878',
-            foto_perfil: ''
+            foto_perfil: '/images/foto-juan.jpg'
         },
         comentarios: [
             {
                 id: 15,
-                comentario: "Fan de The Coffee Store BA. Nunca tuve ni un problema. AMO sus cafeteras",
+                comentario: "Fan de Cafe Store BA. Nunca tuve ni un problema. AMO sus cafeteras",
                 usuario: {
                     id: 15,
                     nombre: 'Franco Ros',
@@ -242,22 +242,11 @@ let lista_productos = [
                     contrasenia: '345678',
                     fecha_nacimiento: '1998-03-21',
                     numero_documento: '34028191',
-                    foto_perfil: ''
+                    foto_perfil: '/images/foto-juan.jpg'
                 }
             }
         ]
     },
 ]
-
-// }
-// usuario: contendrá un objeto literal con los datos de un usuario. Serán los datos del usuario logueado. Los datos deben ser coherentes con la información pedida en el formulario de registro.
-// Los datos del usuario deben mostrarse en todos los lugares donde aparezca el header logueado y en “mi perfil”.
-// productos: contendrá un array de objetos literales con los datos de los productos. Debe tener al menos 10 productos. Debe ser coherente con la información pedida en el formulario de carga de productos.
-// Los datos deben ser coherentes con la información pedida en el formulario de carga de productos.
-// La información de los productos debe mostrarse en todos los lugares de la maqueta en donde aparezca un listado de productos por ejemplo en home y en  “mi perfil”.
-// comentarios: contendrá un array de objetos literales con los datos de los comentarios que se ven en el detalle de un producto.. La información de cada comentario debe ser:
-// nombre de usuario.
-// texto del comentario.
-// imagen de perfil: no es necesario que coloques una imagen de perfil. Podés dejar la que está ahora en la maqueta.
 
 module.exports = lista_productos;
