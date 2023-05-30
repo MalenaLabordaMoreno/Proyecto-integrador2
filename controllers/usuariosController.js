@@ -1,10 +1,11 @@
-const lista_productos = require('../data/data');
+const db = require('../database/models');
+
 let usuariosController = {
     register: function (req,res) {
         return res.render('register')
     }, 
     profile: function (req,res) {
-        return res.render('profile', {lista_productos: lista_productos })
+        return res.render('profile', {lista_productos: db})
     },
     edit: function(req,res) {
         return res.render('profile-edit')
