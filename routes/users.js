@@ -12,5 +12,7 @@ router.get('/login',usuariosController.login)
 router.get('/register', usuariosController.register)
 router.get('/profile', usuariosController.profile) // le agregamos id?
 
+router.post('/register', usuariosController.store); //Guarda al usuario en la base de datos.
+
 module.exports = router;
 
