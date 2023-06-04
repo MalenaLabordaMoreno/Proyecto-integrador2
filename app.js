@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session'); //defini la variable session
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,6 +24,24 @@ app.use(express.static(path.join(__dirname, 'public'))); //recursos estaticos, v
 app.use('/', indexRouter); // la usamos para home y creditos 
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter); // ruta troncal. la usamos para productos. 
+
+//Session se inicia antes de las rutas
+app.use(session( 
+  {
+  secret: 'cafestoreba',
+  saveUninitialized: true,
+  resave: false
+  }
+  ));
+
+//Pasar datos de session a las vistas. Usando un middleware de aplicación.
+app.use(function(req, res, next){
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user
+    return next();
+  }
+  return next();
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
