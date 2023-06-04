@@ -2,9 +2,31 @@ module.exports = function(sequelize,dataTypes) {
 
     let alias = "Comentario" // nombre que identifico al modelo cuando lo necesito en el controlador
 
-    // let cols = {
-    //     //completar con datos de la tabla 
-    // }
+    let cols = {
+        id: {
+            primaryKey: true,
+            autoIncrement: true,
+            type: dataTypes.INTEGER
+        },
+        usuario_id: {
+            type: dataTypes.INTEGER
+        },
+        producto_id: {
+            type: dataTypes.INTEGER
+        },
+        comentario: {
+            type: dataTypes.STRING
+        },
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        updatedAt: {
+            type: dataTypes.DATE
+        },
+        deletedAt: {
+            type: dataTypes.DATE
+        }
+    }
 
     let conf = {
         underscored: true,
