@@ -1,4 +1,5 @@
 const db = require('../database/models');
+let op = db.Sequelize.Op;
 
 let productosController = {
     detalle: function (req,res) {
@@ -18,7 +19,12 @@ let productosController = {
     },
 
     search: function (req,res) { 
-        return res.render('search-results', {lista_productos: db})
+        let busqueda = req.query.search
+         
+        db.productos.findAll({
+            
+        })
+//        return res.render('search-results', {lista_productos: db})
     },
 };
 
