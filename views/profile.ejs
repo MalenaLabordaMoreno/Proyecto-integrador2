@@ -12,10 +12,10 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> 
-						<%= lista_productos.comentarios%>
-						<a href="/profile/<%= lista_productos.comentarios%>"> <%= lista_productos.usuarios %></a>
+						<%= info_usuario.comentarios%>
+						<a href="/profile/<%= info_usuario.comentarios%>"> <%= info_usuario.usuarios %></a>
 						<a href="/users/editProfile">
-							<i class="fas fa-cog"></i> LUISA GOMEZ
+							<i class="fas fa-cog"></i> <%=info_usuario.usuario%>
 						</a>
 					</h1>
 					<a class="btn mt-3 ml-4" href="/users/editProfile">SEGUIR</a>
@@ -38,17 +38,17 @@
         	<div class="col-12">
             	<h2 class="products-title">Mis Productos</h2>
         	</div>
-        	<% for (let i = 0; i < lista_productos.length; i++) { %>
+        	<% for (let i = 0; i < info_usuario.length; i++) { %>
             	<div class="col-12 col-sm-6 col-lg-3">
                 	<section class="product-box">
-                    	<a href="/productos/detalle/<%= lista_productos[i].id %>">
+                    	<a href="/productos/detalle/<%= info_usuario[i].id %>">
                         	<figure class="product-box_image">
-                            	<img src="<%= lista_productos[i].imagen %>" alt="<%= lista_productos[i].nombre %>">
+                            	<img src="<%=info_usuario[i].imagen %>" alt="<%= info_usuario[i].nombre %>">
                         	</figure>
                         	<article class="product-box_data">
-                            	<h2><%= lista_productos[i].nombre %></h2>
-                            	<p><%= lista_productos[i].descripcion %></p>
-                            	<p>Comentarios: <%= lista_productos[i].comentarios.length %></p>
+                            	<h2><%= info_usuario[i].nombre %></h2>
+                            	<p><%= info_usuario[i].descripcion %></p>
+                            	<p>Comentarios: <%= info_usuario[i].comentarios.length %></p>
                         	</article>
                     	</a>
                 	</section>

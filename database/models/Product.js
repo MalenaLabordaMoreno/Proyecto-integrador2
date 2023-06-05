@@ -25,6 +25,9 @@ module.exports = function(sequelize,dataTypes) {
         },
         deletedAt: {
             type: dataTypes.DATE
+        },
+        imagen: {
+            type:dataTypes.STRING
         }
     }
 

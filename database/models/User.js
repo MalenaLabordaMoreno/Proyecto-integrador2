@@ -31,6 +31,9 @@ module.exports = function(sequelize,dataTypes) {
         },
         deletedAt: {
             type: dataTypes.DATE
+        },
+        imagenUsuario: {
+            type: dataTypes.STRING
         }
     }
 

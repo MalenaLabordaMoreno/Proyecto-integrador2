@@ -8,7 +8,10 @@ let usuariosController = {
             return res.render('register')
         }, 
         profile: function (req,res) {
-            return res.render('profile', {lista_productos: db})
+            return res.render('profile', {
+                info_usuario: db.Usuario,
+                comentario:db.Comentario
+            })
         },
         edit: function(req,res) {
             return res.render('profile-edit')
@@ -25,7 +28,7 @@ let usuariosController = {
             }
         
             //Usar un método de Sequelize para guardar datos.
-            db.User.create(user) //Pasar un objeto literal con los datos a guardar.
+            db.Usuario.create(user) //Pasar un objeto literal con los datos a guardar.
                 .then(function(usuarioCreado){ //retorna el elemento creado
                     //Dentro del then debería redireccionar a otra ruta.
                     console.log(usuarioCreado);
@@ -45,7 +48,7 @@ let usuariosController = {
         },
         processLogin: function(req, res){
             //Tengo que buscar los datos de la db.
-            db.User.findOne({
+            db.Usuario.findOne({
                 where: [{email:req.body.email}]
             })
                .then(function(usuarioEncontrado){
