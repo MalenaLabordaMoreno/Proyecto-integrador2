@@ -14,13 +14,14 @@ let usuariosController = {
             return res.render('profile-edit')
         },
         store: function(req, res){
-            let form = req.body
+            let form = req.body; //form guarda toda la info que va por post
         
             //Encriptar la contraseña antes de guardar en la base de datos.
             let user = {
-                email:form.email,
+                email: form.email,
                 name: form.usuario,
                 contrasena: bcriptjs.hashSync(form.contrasena, 10),
+                //remember_token = ""
             }
         
             //Usar un método de Sequelize para guardar datos.
@@ -28,16 +29,16 @@ let usuariosController = {
                 .then(function(usuarioCreado){ //retorna el elemento creado
                     //Dentro del then debería redireccionar a otra ruta.
                     console.log(usuarioCreado);
-                    return res.redirect('/index');
+                    return res.redirect('/');
                 })
                 .catch(function(e){
                     console.log(e);
                 })
         },
         login: function(req, res){
-            //Si el usuario está logueado redirigirlo a home
+            //Si el usuario está logueado, redirigirlo a home (localhost/users/login)
             if(req.session.user != undefined){
-                return res.redirect('/')
+                return res.redirect('/') //el redirect manda a otra ruta, para que el servidor ejecuta el metodo enlazado a esta, que renderiza la vista
             } else {
                 return res.render('login');
             }
@@ -57,7 +58,7 @@ let usuariosController = {
                     return res.render('login');
                 } else {
                     //Validar contraseña antes de loguear
-                    let compare = bcriptjs.compareSync(req.body.password, usuarioEncontrado.password)
+                    let compare = bcriptjs.compareSync(req.body.contrasena, usuarioEncontrado.contrasena)
                     
                     if(compare){
                         //Ponerlos en session.
@@ -92,6 +93,8 @@ let usuariosController = {
     
             //Destruyo la cookie
             return res.redirect('/');
+            //res.ClearCookie('userId');
+            //return res.render('login');
         }
     }
     module.exports = usuariosController;

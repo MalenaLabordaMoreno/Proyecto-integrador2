@@ -2,7 +2,11 @@
 <html>
   <%- include('./partials/head') %>
   <body>
-	<%- include('./partials/header') %>
+	<% if (user != null) { %>
+		<%- include('headerLogueado')
+	<% } else { %>
+		<%- include('header')
+	<% } %>	
     <%- include('./partials/banner') %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
