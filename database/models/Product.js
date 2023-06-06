@@ -32,21 +32,32 @@ module.exports = function(sequelize,dataTypes) {
     }
 
     let conf = {
-        underscored: true,
         tableName: "productos",
-        usuarioId: "usuario_id",
-        nombreProducto: "nombre_producto"
+        timestamps: false,
+        underscored: false,
     }
 
     let product = sequelize.define(alias,cols,conf);
 
-    product.associate = function(models){
-        product.belongsTo(models.User, {
-            as: 'users',
-            foreignKey: "usuario_id",
-            foreignKey: "productos_id"
+    product.associate = function(models) {
+        product.belongsTo(models.Usuario, {
+            as: 'user', // Este alias representa al usuario cuando llamamos a los productos
+            foreignKey: 'usuario_id'
+        })
+
+        product.hasMany(models.Comentario, {
+            as: 'comments',
+            foreignKey: 'productos_id'
         })
     }
+
+    // product.associate = function(models){
+    //     product.belongsTo(models.User, {
+    //         as: 'users',
+    //         foreignKey: "usuario_id",
+    //         foreignKey: "productos_id"
+    //     })
+    // }
 
     return product
 }

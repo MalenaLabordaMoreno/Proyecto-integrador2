@@ -18,13 +18,16 @@ let usuariosController = {
         },
         store: function(req, res){
             let form = req.body; //form guarda toda la info que va por post
+            console.log(form);
         
             //Encriptar la contraseña antes de guardar en la base de datos.
             let user = {
                 email: form.email,
-                name: form.usuario,
+                usuario: form.usuario,
                 contrasena: bcriptjs.hashSync(form.contrasena, 10),
-                //remember_token = ""
+                fecha_nacimiento: form.fecha_nacimiento,
+                dni: form.dni,
+                imagenUsuario: 'default-image.png'
             }
         
             //Usar un método de Sequelize para guardar datos.

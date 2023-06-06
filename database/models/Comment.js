@@ -1,4 +1,4 @@
-module.exports = function(sequelize,dataTypes) {
+module.exports = function (sequelize, dataTypes) {
 
     let alias = "Comentario" // nombre que identifico al modelo cuando lo necesito en el controlador
 
@@ -11,7 +11,7 @@ module.exports = function(sequelize,dataTypes) {
         usuario_id: {
             type: dataTypes.INTEGER
         },
-        producto_id: {
+        productos_id: {
             type: dataTypes.INTEGER
         },
         comentario: {
@@ -29,27 +29,24 @@ module.exports = function(sequelize,dataTypes) {
     }
 
     let conf = {
-        underscored: true,
         tableName: "comentarios",
-        productosId: "productos_id",
-        usuarioId: "usuario_id"
+        timestamps: false,
+        underscored: false,
     }
 
-    let comment = sequelize.define(alias,cols,conf);
+    let comment = sequelize.define(alias, cols, conf);
 
-    comment.associate = function(models){
-        comment.belongsTo(models.User, {
+    comment.associate = function (models) {
+        comment.belongsTo(models.Usuario, {
             as: 'user',
             foreignKey: "usuario_id",
         })
+
+        comment.belongsTo(models.Producto, {
+            as: 'product',
+            foreignKey: "productos_id"
+        })
     }
-    
-    comment.associate = funcion(models)
-        comment.belongsTo(models.Product, {
-        as: 'product',
-        foreignKey: "productos_id"
-    }
-        )
 
     return comment
 }

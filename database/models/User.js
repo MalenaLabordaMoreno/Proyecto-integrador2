@@ -38,18 +38,30 @@ module.exports = function(sequelize,dataTypes) {
     }
 
     let conf = {
-        underscored: true,
         tableName: "users",
-        fechaNacimiento: "fecha_nacimiento"
+        timestamps: false,
+        underscored: false,
     }
 
     let user = sequelize.define(alias,cols,conf);
 
-    user.associate = function(models){
-        user.hasMany(models.Product, {
-            as: 'products'
+    user.associate = function(models) {
+        user.hasMany(models.Producto, {
+            as: 'products', // Este alias representa a los productos cuando llamamos a los usuarios
+            foreignKey: 'usuario_id'
+        })
+
+        user.hasMany(models.Comentario, {
+            as: 'comments',
+            foreignKey: 'usuario_id'
         })
     }
+
+    // user.associate = function(models){
+    //     user.hasMany(models.Product, {
+    //         as: 'products'
+    //     })
+    // }
 
     return user
 }
