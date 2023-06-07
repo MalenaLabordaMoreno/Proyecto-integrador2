@@ -10,7 +10,7 @@ const indexController = {
             ]
         })
         .then(productos => {
-            // res.send(productos);
+            //res.send(productos);
             res.render('index', {lista_productos: productos});
         })
         .catch(error => console.log(error));

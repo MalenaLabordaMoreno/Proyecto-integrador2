@@ -17,4 +17,3 @@ router.post('/login',usuariosController.processLogin) //redirige al login si enc
 router.post('/logout',usuariosController.logout) //redigire al index
 
 module.exports = router;
-
