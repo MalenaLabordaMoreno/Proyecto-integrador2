@@ -2,7 +2,11 @@
 <html>
   <%- include('./partials/head') %>
   <body>
-	<%- include('./partials/header') %>
+	<% if (locals.user) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
 
     <%- include('./partials/banner') %>
 	<!-- Novedades -->
@@ -22,7 +26,7 @@
                         	<article class="product-box_data">
                             	<h2><%= lista_productos[i].nombre_producto %></h2>
                             	<p><%= lista_productos[i].descripcion %></p>
-                            	<p>Comentarios: <%= lista_productos[i].comments %></p>
+                            	<p>Comentarios: <%= lista_productos[i].comments.length %></p>
                         	</article>
                     	</a>
                 	</section>
@@ -48,7 +52,7 @@
 						<article class="product-box_data">
 							<h2><%= lista_productos[i].nombre %></h2>
 							<p><%= lista_productos[i].descripcion %></p>
-							<p>Comentarios: <%= lista_productos[i].comentarios.length %></p>
+							<p>Comentarios: <%= lista_productos[i].comments.length %></p>
 						</article>
 					</a>
 				</section>

@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head')%> 
-<body>
-	<%- include('./partials/header') %>
+<%- include('./partials/head')%>
 
-	<div class="container products-wrapper">
-		<div class="row">
-	
-			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
-			</div>
+	<body>
+		<% if (locals.user) { %>
+			<%- include('./partials/headerLogueado') %>
+				<% } else { %>
+					<%- include('./partials/header') %>
+						<% } %>
 
-				<% for (let i = 0; i < lista_productos.length ; i++) { %>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<section class="product-box">
-							<a href="/productos/:id">
-								<figure class="product-box_image">
-									<img src="<%= lista_productos[i].imagen %>"alt="<%= lista_productos[i].nombre %>">
-								</figure>
-								<article class="product-box_data">
-									<h2><%= lista_productos[i].nombre %></h2>
-									<p><%= lista_productos[i].descripcion %></p>
-									<p>Comentarios: <%= lista_productos[i].comentarios.length %></p>
-								</article>
-							</a>
-						</section>
-					</div>
+							<div class="container products-wrapper">
+								<div class="row">
 
-		</div> 
-				<% } %>
-	</div>
-            <%- include('./partials/foot')%> 
+									<div class="col-12">
+										<h2 class="products-title">Resultados de búsqueda</h2>
+									</div>
 
-</body>
+									<% for (let i=0; i < lista_productos.length ; i++) { %>
+										<div class="col-12 col-sm-6 col-lg-3">
+											<section class="product-box">
+												<a href="/productos/<%= lista_productos[i].id %>">
+													<figure class="product-box_image">
+														<img src="/images/products/<%= lista_productos[i].imagen %>"
+															alt="<%= lista_productos[i].nombre %>">
+													</figure>
+													<article class="product-box_data">
+														<h2>
+															<%= lista_productos[i].nombre %>
+														</h2>
+														<p>
+															<%= lista_productos[i].descripcion %>
+														</p>
+														<p>Comentarios: <%= lista_productos[i].comments.length %>
+														</p>
+													</article>
+												</a>
+											</section>
+										</div>
+
+								</div>
+								<% } %>
+							</div>
+							<%- include('./partials/foot')%>
+
+	</body>
 
 </html>
