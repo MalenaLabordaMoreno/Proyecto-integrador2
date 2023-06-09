@@ -1,20 +1,30 @@
-const { name } = require("ejs");
 let db = require("../database/models");
 let op = db.Sequelize.Op;
 let bcriptjs = require('bcryptjs');
 
 let usuariosController = {
-        register: function (req,res) {
+        register: function (req,res) { // COMPLETAR SESSION
             return res.render('register')
         }, 
-        profile: function (req,res) {
+        profile: function (req,res) { // DETALLE DE PRODUCTO == DETALLE PERFIL
             return res.render('profile', {
                 info_usuario: db.Usuario,
                 comentario:db.Comentario
             })
         },
         edit: function(req,res) {
-            return res.render('profile-edit')
+            if (req.session.user) {
+                return res.render('profile-edit')
+            } else {
+                return res.redirect('/users/login')
+            }
+        },
+        processEdit: function(req,res) { // COMPLETAR
+            let form = req.body;
+
+            // Validar que todo el formulario esté completo. Sino buscar la data que el usuario no quiere actualizar
+
+            db.Usuario.update({})
         },
         store: function(req, res){
             let form = req.body; //form guarda toda la info que va por post
@@ -35,7 +45,7 @@ let usuariosController = {
                 .then(function(usuarioCreado){ //retorna el elemento creado
                     //Dentro del then debería redireccionar a otra ruta.
                     console.log(usuarioCreado);
-                    return res.redirect('/');
+                    return res.redirect('/users/login');
                 })
                 .catch(function(e){
                     console.log(e);
@@ -69,13 +79,14 @@ let usuariosController = {
                     if(compare){
                         //Ponerlos en session.
                         req.session.user = {
+                            id: usuarioEncontrado.id,
                             email: usuarioEncontrado.email,
-                            userName: usuarioEncontrado.name,
+                            userName: usuarioEncontrado.usuario,
                         }
                         //Preguntar si el usuario tildó el checkbox para recordarlo
                         // return res.send (req.body);
                         if(req.body.recordarme != undefined){
-                            res.cookie('cookieEspecial', 'el dato que quiero guardar', {maxAge: 1000*60*123123123})
+                            res.cookie('userId', usuarioEncontrado.id, {maxAge: 1000*60*123123123})
                         }
                         //Y si el usuario quiere, agregar la cookie para que lo recuerde.
                         
@@ -96,10 +107,10 @@ let usuariosController = {
         logout: function(req, res){
             // destruir session
             req.session.destroy();
+            res.ClearCookie('userId');
     
             //Destruyo la cookie
             return res.redirect('/');
-            //res.ClearCookie('userId');
             //return res.render('login');
         }
     }
