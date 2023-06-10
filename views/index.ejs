@@ -2,7 +2,11 @@
 <html>
   <%- include('./partials/head') %>
   <body>
-	<%- include('./partials/header') %>
+	<% if (locals.user) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
 
     <%- include('./partials/banner') %>
 	<!-- Novedades -->
@@ -17,12 +21,12 @@
                 	<section class="product-box">
                     	<a href="/productos/detalle/<%= lista_productos[i].id %>">
                         	<figure class="product-box_image">
-                            	<img src="/images/products/<%= lista_productos[i].imagen %>" alt="<%= lista_productos[i].nombre %>">
+                            	<img src="<%- lista_productos[i].imagen %>" alt="<%= lista_productos[i].nombre %>">
                         	</figure>
                         	<article class="product-box_data">
                             	<h2><%= lista_productos[i].nombre_producto %></h2>
                             	<p><%= lista_productos[i].descripcion %></p>
-                            	<p>Comentarios: <%= lista_productos[i].comments %></p>
+                            	<p>Comentarios: <%= lista_productos[i].comments.length %></p>
                         	</article>
                     	</a>
                 	</section>
@@ -43,12 +47,12 @@
 				<section class="product-box">
 					<a href="/productos/detalle/<%= lista_productos[i].id %>">
 						<figure class="product-box_image">
-							<img src="/images/products/<%= lista_productos[i].imagen %>" alt="<%= lista_productos[i].nombre %>">
+							<img src="<%- lista_productos[i].imagen %>" alt="<%= lista_productos[i].nombre %>">
 						</figure>
 						<article class="product-box_data">
 							<h2><%= lista_productos[i].nombre %></h2>
 							<p><%= lista_productos[i].descripcion %></p>
-							<p>Comentarios: <%= lista_productos[i].comentarios.length %></p>
+							<p>Comentarios: <%= lista_productos[i].comments.length %></p>
 						</article>
 					</a>
 				</section>

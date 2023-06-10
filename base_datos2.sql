@@ -39,10 +39,10 @@ deletedAt TIMESTAMP NULL
 );
 
 INSERT INTO users (id, email, usuario, contrasena, fecha_nacimiento, dni, imagenUsuario, createdAt, updatedAt, deletedAt)
-VALUES (1,'malena@gmail.com','malenalombardi','2345678','2003-03-03',12345678, 'default-image.png',NULL,NULL,NULL);
+VALUES (1,'malena@gmail.com','malenalombardi','2345678','2003-03-03',12345678, 'https://i.pinimg.com/originals/e3/63/16/e36316cfd05ca21e44d8fabcf1a192be.jpg',NULL,NULL,NULL);
 
 INSERT INTO productos (id, usuario_id, nombre_producto, descripcion, imagen, createdAt, updatedAt, deletedAt)
-VALUES (1,1,'Cafetera Verde ','Cafetera Verde','cafetera-verde.png',NULL,NULL,NULL);
+VALUES (1,1,'Cafetera Verde ','Cafetera Verde','https://http2.mlstatic.com/cafetera-nespresso-essenza-mini-verde-cupon-cafe-D_NQ_NP_952744-MLM31906228486_082019-F.jpg',NULL,NULL,NULL);
 
 INSERT INTO comentarios (id, usuario_id, productos_id, comentario, createdAt, updatedAt, deletedAt)
 VALUES (1,1,1,'Muy buena cafetera!',NULL,NULL,NULL);

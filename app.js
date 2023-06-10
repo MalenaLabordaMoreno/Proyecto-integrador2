@@ -21,11 +21,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public'))); //recursos estaticos, van en carpeta public
 
-app.use('/', indexRouter); // la usamos para home y creditos 
-app.use('/users', usersRouter);
-app.use('/productos', productosRouter); // ruta troncal. la usamos para productos. 
-
-//Session se inicia antes de las rutas
 app.use(session( 
   {
   secret: 'cafestoreba',
@@ -42,6 +37,12 @@ app.use(function(req, res, next){
   }
   return next();
 })
+
+app.use('/', indexRouter); // la usamos para home y creditos 
+app.use('/users', usersRouter);
+app.use('/productos', productosRouter); // ruta troncal. la usamos para productos. 
+
+//Session se inicia antes de las rutas
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
