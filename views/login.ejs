@@ -5,6 +5,10 @@
 <body>
     <%- include('./partials/header')%> 
 
+	<% if(locals.errors){  %> 
+		<p class= “error”> <%= errors.message %> </p>
+	 <% } %>
+
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">

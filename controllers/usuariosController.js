@@ -29,6 +29,15 @@ let usuariosController = {
         store: function(req, res){
             let form = req.body; //form guarda toda la info que va por post
             console.log(form);
+            let errors = {}
+
+            if(req.body.email == "") {
+                errors.message = "El email no puede estar vacío"; //cargamos el mensaje
+                res.locals.errors = errors; //Usamos locals para pasarlo a la vista
+                return res.render('register'); //Renderizamos la vista 
+            } //Podemos realizar una nueva validación con un else if. 
+
+            // && req.body.contrasena.length >= 3
         
             //Encriptar la contraseña antes de guardar en la base de datos.
             let user = {
@@ -37,8 +46,8 @@ let usuariosController = {
                 contrasena: bcriptjs.hashSync(form.contrasena, 10),
                 fecha_nacimiento: form.fecha_nacimiento,
                 dni: form.dni,
-                imagenUsuario: 'default-image.png'
-            }
+                imagenUsuario: form.imagenUsuario
+            }    
         
             //Usar un método de Sequelize para guardar datos.
             db.Usuario.create(user) //Pasar un objeto literal con los datos a guardar.
