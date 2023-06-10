@@ -1,5 +1,3 @@
-module.exports = indexController;
-
 const db = require('../database/models');
 const Productos = db.Producto
 
