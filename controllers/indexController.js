@@ -1,3 +1,5 @@
+module.exports = indexController;
+
 const db = require('../database/models');
 const Productos = db.Producto
 
@@ -7,6 +9,9 @@ const indexController = {
             include: [
                 {association: 'user'},
                 {association: 'comments', include: 'user'}
+            ],
+            order: [
+                ['updatedAt', 'DESC']
             ]
         })
         .then(productos => {
