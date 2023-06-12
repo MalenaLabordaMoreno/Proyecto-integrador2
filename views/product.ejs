@@ -11,16 +11,16 @@
 	
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%=producto.nombre_producto%></h2> 
-			<p class="product-detail-description">
+			<h2 class="productos-title"><%= producto.nombre_producto%></h2> 
+			<p class="producto-detail-description">
 				<a href="/productos/agregar">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%- producto.imagen %>" alt="<%= producto.nombre_producto %>" class="product-detail-img">
-					<p class="product-detail-description">
+					<img src="<%- producto.imagen %>" alt="<%= producto.nombre_producto %>" class="producto-detail-img">
+					<p class="producto-detail-description">
 						<%= producto.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">

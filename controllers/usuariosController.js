@@ -139,7 +139,7 @@ let usuariosController = {
         logout: function(req, res){
             // destruir session
             req.session.destroy();
-            res.ClearCookie('userId');
+            res.clearCookie('userId');
     
             //Destruyo la cookie
             return res.redirect('/');

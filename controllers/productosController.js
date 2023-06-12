@@ -11,7 +11,7 @@ let productosController = {
             ]
         }) //falta el include para mostrar los comentarios y los usuarios
             .then((resultado) => {
-                // res.send(resultado)
+                //return res.send(resultado)
                 return res.render('product', {producto: resultado})
             })
             .catch(error => console.log(error));
