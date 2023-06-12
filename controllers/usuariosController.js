@@ -9,7 +9,8 @@ let usuariosController = {
         profile: function (req,res) { // DETALLE DE PRODUCTO == DETALLE PERFIL
             db.Usuario.findByPk(req.params.id, {
                 include: [
-                    {association: "products" } 
+                    {association: 'comments' },
+                    {association: 'products', order: ['createdAt', 'ASC'] }
                 ]
             })
             .then(function(resultado){
@@ -21,7 +22,7 @@ let usuariosController = {
                             res.locals.errors = errors;
                             return res.render('profile', {info_usuario : resultado})
         
-                        } else{
+                        } else {
                             return res.render('profile', {info_usuario : resultado}) //chequear nombre en vistas y aca
                         }
                     } else {

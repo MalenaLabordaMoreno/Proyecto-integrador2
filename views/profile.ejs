@@ -24,7 +24,7 @@
 				</div>
 				<div>
 					<ul class="">
-						<li><%= info_usuario.products.length%> productos</li>
+						<li> <%= info_usuario.products.length%> productos </li>
 						<li>200 seguidores</li> <!--chequear-->
 						<li>300 comentarios</li> <!--chequear-->
 					</ul>
@@ -49,12 +49,12 @@
                 	<section class="product-box">
                     	<a href="/productos/detalle/<%= info_usuario.products[i].id %>">
                         	<figure class="product-box_image">
-                            	<img src="<%=info_usuario[i].imagen %>" alt="<%= info_usuario[i].nombre %>">
+                            	<img src="<%-info_usuario.products[i].imagen %>" alt="<%= info_usuario.usuario %>">
                         	</figure>
                         	<article class="product-box_data">
-                            	<h2><%= info_usuario[i].nombre %></h2>
-                            	<p><%= info_usuario[i].descripcion %></p>
-                            	<p>Comentarios: <%= info_usuario[i].comentarios.length %></p>
+                            	<h2><%= info_usuario.usuario %></h2>
+                            	<p><%= info_usuario.products[i].descripcion %></p>
+                            	<p>Comentarios: <%= info_usuario.comments.length %></p>
                         	</article>
                     	</a>
                 	</section>

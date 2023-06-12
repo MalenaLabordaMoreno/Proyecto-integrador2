@@ -32,7 +32,7 @@ let productosController = {
             usuario_id: req.session.user.id,
             nombre_producto: form.nombre,
             descripcion: form.descripcion,
-            imagen: 'default-image.png',
+            imagen: form.imagen,
         }
 
         Productos.create(producto)
