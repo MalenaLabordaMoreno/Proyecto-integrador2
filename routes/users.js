@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 router.get('/editProfile', usuariosController.edit);
 router.get('/login',usuariosController.login)
 router.get('/register', usuariosController.register)
-router.get('/profile', usuariosController.profile) // le agregamos id?
+router.get('/profile/:id', usuariosController.profile) // le agregamos id?
 
 router.post('/register', usuariosController.store); //Guarda al usuario en la base de datos.
 router.post('/login',usuariosController.processLogin) //redirige al login si encuentra al usuario logueado

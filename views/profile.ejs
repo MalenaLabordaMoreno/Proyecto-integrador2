@@ -11,24 +11,22 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="<%- info_usuario.imagenUsuario%>" alt="foto de perfil" class="foto-perfil">
+				<img src="<%-info_usuario.imagenUsuario%>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> 
-						<%= info_usuario.comentarios%>
-						<a href="/profile/<%= info_usuario.comentarios%>"> <%= info_usuario.usuarios %></a>
 						<a href="/users/editProfile">
 							<i class="fas fa-cog"></i> <%=info_usuario.usuario%>
 						</a>
 					</h1>
-					<a class="btn mt-3 ml-4" href="/users/editProfile">SEGUIR</a>
+					<a class="btn mt-3 ml-4" href="/users/editProfile">SEGUIR</a> <!--no deberia tirar a editar perfil, solo mostrar si no es tu usuario propio -->
 				</div>
 				<div>
 					<ul class="">
-						<li>8 productos</li>
-						<li>200 seguidores</li>
-						<li>300 comentarios</li>
+						<li><%= info_usuario.products.length%> productos</li>
+						<li>200 seguidores</li> <!--chequear-->
+						<li>300 comentarios</li> <!--chequear-->
 					</ul>
 				</div>
 			</div>
@@ -40,12 +38,16 @@
 	<div class="container products-wrapper">
     	<div class="row">
         	<div class="col-12">
-            	<h2 class="products-title">Mis Productos</h2>
+            	<h2 class="products-title">Productos</h2> 
         	</div>
-        	<% for (let i = 0; i < info_usuario.length; i++) { %>
+			<% if (locals.errors) {%>
+				<p><%= errors.message%></p> 
+			<% } else{ %>
+
+        	<% for (let i = 0; i < info_usuario.products.length; i++) { %>
             	<div class="col-12 col-sm-6 col-lg-3">
                 	<section class="product-box">
-                    	<a href="/productos/detalle/<%= info_usuario[i].id %>">
+                    	<a href="/productos/detalle/<%= info_usuario.products[i].id %>">
                         	<figure class="product-box_image">
                             	<img src="<%=info_usuario[i].imagen %>" alt="<%= info_usuario[i].nombre %>">
                         	</figure>
@@ -58,6 +60,7 @@
                 	</section>
             	</div>
         	<% } %>
+			<% } %>	
 	<!-- /Mis productos -->
     <%- include('./partials/foot')%>
 

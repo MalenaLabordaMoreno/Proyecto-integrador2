@@ -1,15 +1,37 @@
 let db = require("../database/models");
 let op = db.Sequelize.Op;
-let bcriptjs = require('bcryptjs');
+let bcryptjs = require('bcryptjs');
 
 let usuariosController = {
         register: function (req,res) { // COMPLETAR SESSION
             return res.render('register')
         }, 
         profile: function (req,res) { // DETALLE DE PRODUCTO == DETALLE PERFIL
-            return res.render('profile', {
-                info_usuario: db.Usuario,
-                comentario:db.Comentario
+            db.Usuario.findByPk(req.params.id, {
+                include: [
+                    {association: "products" } 
+                ]
+            })
+            .then(function(resultado){
+                    if (resultado != undefined){
+                        //return res.send(resultado)
+                         if (resultado.productos.length == 0){
+                            let errors = {}
+                            errors.message = "El usuario no ha publicado productos";
+                            res.locals.errors = errors;
+                            return res.render('profile', {info_usuario : resultado})
+        
+                        } else{
+                            return res.render('profile', {info_usuario : resultado}) //chequear nombre en vistas y aca
+                        }
+                    } else {
+                        return res.send ("Lo sentimos, no encontramos al usuario")
+                    }
+                    
+                })
+
+            .catch(function(error){
+                console.log(error);
             })
         },
         edit: function(req,res) {
@@ -37,13 +59,13 @@ let usuariosController = {
                 return res.render('register'); //Renderizamos la vista 
             } //Podemos realizar una nueva validación con un else if. 
 
-            // && req.body.contrasena.length >= 3
+            //req.body.contrasena.length >= 3
         
             //Encriptar la contraseña antes de guardar en la base de datos.
             let user = {
                 email: form.email,
                 usuario: form.usuario,
-                contrasena: bcriptjs.hashSync(form.contrasena, 10),
+                contrasena: bcryptjs.hashSync(form.contrasena, 10),
                 fecha_nacimiento: form.fecha_nacimiento,
                 dni: form.dni,
                 imagenUsuario: form.imagenUsuario
@@ -83,7 +105,7 @@ let usuariosController = {
                     return res.render('login');
                 } else {
                     //Validar contraseña antes de loguear
-                    let compare = bcriptjs.compareSync(req.body.contrasena, usuarioEncontrado.contrasena)
+                    let compare = bcryptjs.compareSync(req.body.contrasena, usuarioEncontrado.contrasena)
                     
                     if(compare){
                         //Ponerlos en session.
