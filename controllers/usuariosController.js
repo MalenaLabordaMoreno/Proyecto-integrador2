@@ -14,8 +14,8 @@ let usuariosController = {
             })
             .then(function(resultado){
                     if (resultado != undefined){
-                        //return res.send(resultado)
-                         if (resultado.productos.length == 0){
+                        // return res.send(resultado)
+                         if (resultado.products.length < 0){
                             let errors = {}
                             errors.message = "El usuario no ha publicado productos";
                             res.locals.errors = errors;
