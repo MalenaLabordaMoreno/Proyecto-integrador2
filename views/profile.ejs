@@ -40,8 +40,8 @@
         	<div class="col-12">
             	<h2 class="products-title">Productos</h2> 
         	</div>
-			<% if (locals.errors) {%>
-				<p><%= errors.message%></p> 
+			<% if (info_usuario.products.length == 0) {%>
+				<p> No hay productos cargados por este usuario. </p> 
 			<% } else{ %>
 
         	<% for (let i = 0; i < info_usuario.products.length; i++) { %>
