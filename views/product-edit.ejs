@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include('./partials/head')%>
+
+<body>
+	<%- include('./partials/headerLogueado')%>
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+    	<div class="row">
+        	<div class="col-12">
+            	<h2 class="products-title">Editar producto</h2>
+        	</div>
+        	<form action="/productos/editar/<%= producto.id %>" method="post">
+				<input type="text" name="nombre" placeholder="Nombre producto">
+				<input type="text" name="descripcion" placeholder="Descripción">
+				<input type="text" name="imagen" placeholder="Imagen">
+				<button type="submit">Editar</button>
+			</form>
+		
+    	</div>
+	</div>
+	<!-- /Novedades -->
+
+    <%- include('./partials/foot')%>
+	
+	
+</body>
+
+</html>
