@@ -61,11 +61,11 @@ let usuariosController = {
             } //Podemos realizar una nueva validación con un else if. 
 
 
-            if(req.body.email == "") {
-                errors.message = "Este campo email debe ser obligatorio"; 
-                res.locals.errors = errors; 
-                return res.render('register'); 
-            } 
+            // if(req.body.email == "") {
+            //     errors.message = "Este campo email debe ser obligatorio"; 
+            //     res.locals.errors = errors; 
+            //     return res.render('register'); 
+            // } 
 
             //req.body.contrasena.length >= 3
         

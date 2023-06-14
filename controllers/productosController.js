@@ -7,10 +7,14 @@ let productosController = {
     detalle: function (req,res) {
         Productos.findByPk(req.params.id, {
             include: [
-                {association: "comments"},
+                {association: "comments", include: "user"},
                 {association: "user", include: "comments"}
             ]
-        }) //falta el include para mostrar los comentarios y los usuarios
+            // ,
+            // order: [
+            //     ['createdAt', 'DESC']
+            // ]
+        }) 
             .then((resultado) => {
                 //return res.send(resultado)
                 return res.render('product', {producto: resultado})

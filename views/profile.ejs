@@ -19,7 +19,7 @@
 						<% if (locals.user.id == info_usuario.id) { %>
 							<h1 class="main-title"> 
 								<a href="/users/editProfile">
-									<i class="fas fa-cog"></i> <%=info_usuario.usuario%>
+									<i class="fas fa-cog"></i> 
 								</a>
 							</h1>
 						<% } else { %>
@@ -28,6 +28,7 @@
 					<% } else { %>
 						<a class="btn mt-3 ml-4" href="/users/login">SEGUIR</a> <!--no deberia tirar a editar perfil, solo mostrar si no es tu usuario propio -->
 					<% } %>
+					<p><%=info_usuario.usuario%></p>
 				</div>
 				<div>
 					<ul class="">
