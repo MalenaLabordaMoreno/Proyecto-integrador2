@@ -12,10 +12,10 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="productos-title"><%= producto.nombre_producto%> </h2> 
-			<a href="/users/profile/<%= producto.user.id %>" class="products-title"> <%= producto.user.usuario%></h2> 
+			<a href="/users/profile/<%= producto.user.id %>" class="productos-title"> <%= producto.user.usuario%></h2> 
 				<% if (locals.user != undefined && locals.user.id == producto.usuario_id ) { %>
 					<p class="producto-detail-description">
-						<a href="/productos/editar/<%= producto.id %>" class="editar">Editar</a>
+						<a href="/productos/editar/<%= producto.id %>">Editar</a>
 					</p> 
 				<% } %>
 		</div>

@@ -443,10 +443,10 @@ hr {
   padding: 0 15px;
 }
 
-/* .error {
+.error {
   color:rgba(0, 0, 0, 0.5);
-  font-size: 200px;
-} */
+  font-size: 1.4em;
+}
 
 textarea.form-input {
   min-height: 140px;
