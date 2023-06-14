@@ -15,7 +15,7 @@ let usuariosController = {
             })
             .then(function(resultado){
                     if (resultado != undefined){
-                        // return res.send(resultado)
+                        //return res.send(resultado)
                          if (resultado.products.length < 0){
                             let errors = {}
                             errors.message = "El usuario no ha publicado productos";
@@ -60,6 +60,13 @@ let usuariosController = {
                 return res.render('register'); //Renderizamos la vista 
             } //Podemos realizar una nueva validación con un else if. 
 
+
+            if(req.body.email == "") {
+                errors.message = "Este campo email debe ser obligatorio"; 
+                res.locals.errors = errors; 
+                return res.render('register'); 
+            } 
+
             //req.body.contrasena.length >= 3
         
             //Encriptar la contraseña antes de guardar en la base de datos.
@@ -101,7 +108,6 @@ let usuariosController = {
                 
                 if (usuarioEncontrado == null){
                     errores.message = "El email no existe"
-                    
                     res.locals.errors = errores;
                     return res.render('login');
                 } else {
