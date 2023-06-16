@@ -150,6 +150,82 @@ let usuariosController = {
             //Destruyo la cookie
             return res.redirect('/');
             //return res.render('login');
+        }, 
+        editarperfil: function(req,res){
+            let form = req.body; 
+            
+            if (req.session.user != undefined) {
+                Usuarios.findByPk(form, {
+                    include: [
+                        {association: 'user'},
+                    ]
+               })
+               .then(function(resultado) {
+                if (resultado != undefined) {
+                    if (resultado.user.id != req.session.user.id) {
+                        return res.send("No tenes permiso para editar este usuario")
+                    } else {
+                        let form = req.body;
+            
+            let usuarioActualizado = db.Usuario.update({
+                email: form.email,
+                usuario: form.usuario,
+                contrasena:form.contrasena,
+                fecha_nacimiento: form.fecha_nacimiento,
+                dni: form.numero_documento,
+                foto_perfil: form.foto
+                
+            }, {where: {
+                id: form.id
+            }})
+            
+            if (form.email === "") {
+                usuarioActualizado.email = resultado.email
+            }
+
+            if (form.usuario === "") {
+                usuarioActualizado.usuario = resultado.usuario
+            }
+
+            if (form.contrasena === "") {
+                usuarioActualizado.contrasena= resultado.contrasena
+            }
+
+            if (form.fecha_nacimiento === "") {
+                usuarioActualizado.fecha_nacimiento= resultado.fecha_nacimiento
+            }
+
+            if (form.numero_documento === "") {
+                usuarioActualizado.fecha_nacimiento= resultado.numero_documento
+            }
+
+            if (form.foto === "") {
+                usuarioActualizado.fecha_nacimiento= resultado.foto
+            }
+
+            Usuarios.update(usuarioActualizado, {
+                where: {
+                    id: idPost
+                },
+            })
+                .then(function (resultado) {
+                    
+                    return res.redirect('/users/profile:id') //no me anda la ruta
+                })
+                .catch(function (error) {
+                    res.send(error)
+                })
+        }
+    }     else {
+            return res.send("No hemos podido moodeificar el usuario. Intenta devuelta")
+    }
+})
+.catch(function(error) {
+    return res.send(error)
+})
+}
+            let errors = {};
+            errors.message = "Tu usario ha sido modificado. Pofavor volver a ingresar" 
         }
     }
     module.exports = usuariosController;
