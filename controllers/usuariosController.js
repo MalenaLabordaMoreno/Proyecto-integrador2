@@ -166,7 +166,7 @@ let usuariosController = {
                         let usuarioActualizado = {
                             email: form.email,
                             usuario: form.usuario,
-                            contrasena:form.contrasena,
+                            contrasena:bcryptjs.hashSync(form.contrasena, 10),
                             fecha_nacimiento: form.fecha_nacimiento,
                             dni: form.numero_documento,
                             foto_perfil: form.foto_perfil
