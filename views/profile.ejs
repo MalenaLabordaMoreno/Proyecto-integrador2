@@ -18,13 +18,13 @@
 					<% if (locals.user != undefined) { %>
 						<% if (locals.user.id == info_usuario.id) { %>
 							<h1 class="main-title"> 
-								<a href="/users/editProfile">
+								<a href="/users/editProfile/<%= locals.user.id%>">
 									<i class="fas fa-cog"></i> 
 								</a>
 							</h1>
-						<% } else { %>
-							<a class="btn mt-3 ml-4" href="/users/editProfile">SEGUIR</a> <!--no deberia tirar a editar perfil, solo mostrar si no es tu usuario propio -->
-						<% } %>
+							<% } else { %>
+								<a class="btn mt-3 ml-4" href="/users/login">SEGUIR</a> <!--no deberia tirar a editar perfil, solo mostrar si no es tu usuario propio -->
+							<% } %>
 					<% } else { %>
 						<a class="btn mt-3 ml-4" href="/users/login">SEGUIR</a> <!--no deberia tirar a editar perfil, solo mostrar si no es tu usuario propio -->
 					<% } %>
@@ -33,8 +33,8 @@
 				<div>
 					<ul class="">
 						<li> <%= info_usuario.products.length %> productos </li>
-						<li>200 seguidores</li> <!--chequear-->
-						<li>300 comentarios</li> <!--chequear-->
+						<li>200 seguidores</li> 
+						<li>300 comentarios</li> 
 					</ul>
 				</div>
 			</div>
